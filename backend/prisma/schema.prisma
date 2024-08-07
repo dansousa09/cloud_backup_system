@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String    @id @default(uuid()) @db.Uuid()
+  name      String
+  email     String    @unique
+  password  String
+  admin     Boolean   @default(false)
+  files     File[]
+  folders   Folder[]
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @default(now()) @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+}
+
+model File {
+  id        String    @id @default(uuid()) @db.Uuid()
+  filename  String
+  url       String
+  extension String
+  size      Float
+  User      User      @relation(fields: [userId], references: [id])
+  userId    String    @db.Uuid()
+  Folder    Folder?   @relation(fields: [folderId], references: [id])
+  folderId  String?   @db.Uuid()
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @default(now()) @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+}
+
+model Folder {
+  id        String    @id @default(uuid()) @db.Uuid()
+  name      String
+  files     File[]
+  User      User      @relation(fields: [userId], references: [id])
+  userId    String    @db.Uuid()
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @default(now()) @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+}
