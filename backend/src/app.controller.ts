@@ -1,12 +1,13 @@
 import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
-	constructor(private readonly appService: AppService) {}
-
 	@Get()
 	getHello(): string {
-		return this.appService.getHello();
+		return `
+			<div style="text-align: center; padding: 1rem;">
+				<h1>Cloud System Backup API is running...</h1>
+			</div>
+		`;
 	}
 }
