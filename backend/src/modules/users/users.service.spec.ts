@@ -1,18 +1,21 @@
 import { Test, TestingModule } from '@nestjs/testing';
+
+import { DbService } from '@infra/db/db.service';
+import { EncryptService } from '@infra/encrypt/encrypt.service';
 import { UsersService } from './users.service';
 
 describe('UsersService', () => {
-	let service: UsersService;
+	let sut: UsersService;
 
 	beforeEach(async () => {
 		const module: TestingModule = await Test.createTestingModule({
-			providers: [UsersService],
+			providers: [UsersService, EncryptService, DbService],
 		}).compile();
 
-		service = module.get<UsersService>(UsersService);
+		sut = module.get<UsersService>(UsersService);
 	});
 
 	it('should be defined', () => {
-		expect(service).toBeDefined();
+		expect(sut).toBeDefined();
 	});
 });
