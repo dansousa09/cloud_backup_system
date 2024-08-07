@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
-import { DbModule } from 'src/infra/db/db.module';
-import { EncryptModule } from 'src/infra/encrypt/encrypt.module';
+
+import { DbModule } from '@infra/db/db.module';
+import { EncryptModule } from '@infra/encrypt/encrypt.module';
 import { UsersController } from './users.controller';
 import { UsersService } from './users.service';
 

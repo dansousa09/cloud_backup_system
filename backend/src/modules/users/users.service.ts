@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { DbService } from '../../infra/db/db.service';
-import { EncryptService } from '../../infra/encrypt/encrypt.service';
+
+import { DbService } from '@infra/db/db.service';
+import { EncryptService } from '@infra/encrypt/encrypt.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 
