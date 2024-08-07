@@ -6,8 +6,8 @@ import { UsersModule } from './modules/users/users.module';
 import { EncryptModule } from './infra/encrypt/encrypt.module';
 
 @Module({
-  imports: [UsersModule, DbModule, EncryptModule],
-  controllers: [AppController],
-  providers: [AppService],
+	imports: [UsersModule, DbModule, EncryptModule],
+	controllers: [AppController],
+	providers: [AppService],
 })
 export class AppModule {}
