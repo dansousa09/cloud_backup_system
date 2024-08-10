@@ -13,7 +13,7 @@ const AuthContext = createContext<AuthContextProps>({} as AuthContextProps);
 
 const AuthContextProvider = ({ children }: { children: React.ReactNode }) => {
 	const [authState, setAuthState] = useState<AuthStateInterface>({
-		authenticated: false,
+		authenticated: true,
 		token: null,
 	});
 
