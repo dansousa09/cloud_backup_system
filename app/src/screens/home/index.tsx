@@ -1,10 +1,10 @@
 import { Text, View } from "react-native";
 
-export const BegginScreen = () => {
+export const HomeScreen = () => {
   return (
     <>
       <View>
-        <Text>BegginScreen!!!!</Text>
+        <Text>HomeScreen!!!!</Text>
       </View>
     </>
   );

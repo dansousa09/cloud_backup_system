@@ -1,10 +1,10 @@
 import { Text, View } from "react-native";
 
-export const BegginScreen = () => {
+export const LoginScreen = () => {
   return (
     <>
       <View>
-        <Text>BegginScreen!!!!</Text>
+        <Text>LoginScreen!!!!</Text>
       </View>
     </>
   );
