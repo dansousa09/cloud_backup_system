@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from 'react';
-import { AuthStateInterface } from './interfaces/auth.interface';
+import { AuthStateInterface } from '../interfaces/auth.interface';
 
 type AuthContextProps = {
 	authState?: {
